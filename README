@@ -1,0 +1,17 @@
+Chat Pc a PC encriptado con ssl en modo multichat y encriptacion twofish en modo netcat chat; con soporte de tranferencia de archivos.
+Tambien soporta multichat hasta 100 clientes.
+
+Dependencias: nmap, alsa-utils, cryptcat, eterm, curl, gtkdialog (>=2:0.7.20-4)
+
+para iniciar la gui
+entrar a la carpeta usr/bin
+
+
+$ñumessenger
+
+
+Web del proyecto
+http://mamalibre.text0.tk/?q=node/595
+
+Autor
+twitter.com/mamalibre
