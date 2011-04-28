@@ -1,0 +1,347 @@
+#!/bin/bash
+#
+#       ñumessenger 6.6.7
+#       
+#       Copyright 2011 Fabián Bonetti <mama21mama@mamalibre.com.ar>
+#       
+#       This program is free software; you can redistribute it and/or modify
+#       it under the terms of the GNU General Public License as published by
+#       the Free Software Foundation; either version 3 of the License, or
+#       (at your option) any later version.
+#       
+#       This program is distributed in the hope that it will be useful,
+#       but WITHOUT ANY WARRANTY; without even the implied warranty of
+#       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#       GNU General Public License for more details.
+#       
+#       You should have received a copy of the GNU General Public License
+#       along with this program; if not, write to the Free Software
+#       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+#       MA 02110-1301, USA.
+aplay /usr/share/sounds/ñumessenger/ñulogin.wav &
+export CHILD3='
+<window title="Ayuda" icon-name="dialog-question" default_width="650" skip_taskbar_hint="true">
+<frame Ayuda>
+<vbox>
+		<text justify="2">     
+			<label>ñumessenger v6.6.7 «tenes dos modos el normal que funciona sin socket y el modo netcat con cryptcat»</label>              
+		</text>				
+			<text justify="2">
+			<label> -- </label>		 
+		</text>  
+		<text>			
+			<label>1. el modo normal se coloca nuestro IP o HOST del contacto «ejem 127.0.0.1:6899» en la «caja de texto IP» y luego se presiona el «boton IP» segudido del «boton ON»</label>
+		</text>					
+		<text justify="2">
+			<label> -- </label>		 
+		</text>
+		<text justify="2">
+			<label>host para recibir saludo del sistema «mamalibre.2.je» tal cual asi anda</label> 
+		</text>
+			<text justify="2">
+			<label> -- </label>		 
+		</text>   
+		<text justify="2">
+			<label>2. en el modo netcat se «coloca la IP o HOST» de tu amigo que quieras chatear, en el rectangulo izquierdo del «boton IP», luego se presiona el «boton IP» seguido del boton «PC cliente»</label> 
+		</text> 										
+			<text justify="2">
+			<label>Esta es tu IP para darle al otro usuario ya que sere «PC server» en modo netcat</label>		 
+		</text>   
+		<entry>
+			<variable>ENTRY_DATE4</variable>
+			<input>curl ifconfig.me</input>     
+		</entry>
+			<text justify="2">
+			<label> -- </label>
+			</text> 				   		
+		<text justify="3">
+			<label>Esto funciona con wget, SimpleHTTPServer de Python, GtkDialog y bash script en modo normal. Los puertos que usa son Ncat multiusuario 6699; para el modo netcat chat 6896,6898; envios cryptcat files 6868 y para el modo normal 6899.</label> 
+		</text> 
+		<hbox> 	
+		 <button>
+		  <input file icon="gtk-help"></input>
+    <label>Faq</label>
+    <action>xdg-open /usr/share/doc/numessenger/faq.html &</action>    
+     </button>
+		<button>			
+    <label>Reportar Problema</label>
+     <action>xdg-open http://mamalibre.text0.tk/?q=node/595#disqus_thread &</action>    
+    </button>		 	
+   <button>
+   <input file icon="gtk-quit"></input>
+     <label>Cerrar</label>
+     <action type="closewindow">CHILD2</action>
+   </button>      
+   </hbox>
+  </vbox>
+</frame>   
+</window>' 
+
+export CHILD='
+<window title="Acerca de" icon-name="dialog-information" skip_taskbar_hint="true">
+<frame Acerca de>
+		<button>
+			<input file>"/usr/share/ñumessenger/pixmaps/mamalibre.png"</input>
+			<action>xdg-open http://mamalibre.com.ar &</action>
+		</button> 			 
+  <vbox>  
+   <text>      
+     <variable>CHILD</variable>			
+     <label>Ñumessenger Versión 6.6.7</label>     
+   </text>
+   <text>     
+     <label>Copyright ©2011 Fabián Bonetti</label>     
+   </text>    
+    <pixmap>
+      <input file>/usr/share/ñumessenger/pixmaps/supremo_user1.png</input>
+    </pixmap>
+   <text>     
+     <label>Twitter @mamalibre</label>              
+   </text> 
+    <text>     
+     <label>Licenciado bajo GPLv3</label>              
+   </text>
+     <pixmap>
+      <input file>/usr/share/ñumessenger/pixmaps/gplv3.png</input>
+    </pixmap>
+   <text>   
+<variable>ABOUT_DIALOG</variable>
+<label>Ñumessenger es escrito y mantenido por Fabián Bonetti. Da la bienvenida a las sugerencias de mejoras o parches.</label>
+</text>
+    <hbox>    
+    <button>
+    <label>Ideas</label>
+       <action type="launch">CHILD4</action> 
+     </button>
+    <button>
+    <label>Source</label>
+    <action>xdg-open /usr/share/doc/numessenger/source.html &</action>      
+     </button>
+     <button>
+    <label>Licencia</label>
+    <action>xdg-open /usr/share/doc/numessenger/gpl.html &</action>    
+     </button>
+   </hbox>    
+   <button>   
+     <label>Cerrar</label>
+     <action type="closewindow">CHILD</action>
+   </button>   
+  </vbox>  
+</frame>  
+</window>'
+ 
+export script='
+<window title="ñumessenger" icon-name="mail-read" default_width="550"> 
+<vbox>
+  <entry>
+    <variable>ENTRY_DATE</variable>
+    <input>bucle</input>      
+  </entry>
+  <button>
+    <label>Recibir</label>
+    <action>rm ~/.gnumsn/tmp/receive1.txt & aplay /usr/share/sounds/ñumessenger/recibir.wav &</action>
+    <action>refresh:ENTRY_DATE</action>    
+  </button>
+    <text><label>6.6.7</label></text>
+   <entry activates-default="true">
+    <variable>ENTRY1</variable>
+   </entry>
+   <button can-default="true" has-default="true" use-stock="true">
+    <label>Enviar</label>
+    <action>echo -n "$ENTRY1" > ~/.gnumsn/receive1.txt;rm ~/.gnumsn/tmp/receive1.* | aplay /usr/share/sounds/ñumessenger/envio.wav &</action>
+    <action>$TREE</action>
+    <action>refresh:ENTRY_DATE</action>
+   </button>    
+   <hbox>   
+    <entry activates-default="true">
+    <default>mamalibre.2.je</default>
+    <variable>ENTRY2</variable>
+   </entry>   
+     <button can-default="true" has-default="true" use-stock="true">
+    <label>IP</label>
+     <action>aplay /usr/share/sounds/ñumessenger/ipload.wav > /dev/null 2> /dev/null | echo -n "$ENTRY2" &</action>
+     <action>refresh:ENTRY2</action>
+    </button>
+    <button can-default="true" has-default="true" use-stock="true">
+   <label>ON</label>
+     <action>exec server & aplay /usr/share/sounds/ñumessenger/inicioserver.wav &</action>    
+    </button>      
+     <button help>
+    <action type="launch">CHILD3</action> 
+    </button>      
+    <button>
+    <input file icon="help-about"></input>
+     <label>Créditos</label>
+    <action type="launch">CHILD</action> 
+    </button>     
+     <button use-stock="true" label="gtk-quit" has-focus="true">
+     <action>aplay /usr/share/sounds/ñumessenger/ñufin.wav & killall -w cryptcat & killall -w ncat & exec serveroff</action>    
+      <action>EXIT:Exit</action>       
+     </button>               
+  </hbox>
+  <frame modo multiusuario>
+  <hbox>
+  <text>     
+   <label>IP/DNS</label>
+   </text>   
+    <entry activates-default="true">
+    <variable>ENTRY4</variable>
+   </entry>   
+     <button can-default="true" has-default="true" use-stock="true">
+    <label>Iniciar</label>
+     <action>echo -n "$ENTRY4"</action>
+     <action>Eterm -T Modo_Ncat_Multiusuario --scrollbar-type=xterm --buttonbar=off -g 60x20+382+0 -e ncat -v --ssl "$ENTRY4" 6699 & aplay /usr/share/sounds/ñumessenger/iniciocliente.wav &</action>
+    </button>
+  
+  <button can-default="true" has-default="true" use-stock="true">
+   <label>ON</label>
+     <action>exec ncat -vk --chat --ssl -l "$ENTRY2" -p 6699 & aplay /usr/share/sounds/ñumessenger/inicioserver.wav &</action>         
+    </button>
+    <button can-default="true" has-default="true" use-stock="true">
+   <label>OFF</label>
+     <action>killall ncat & aplay /usr/share/sounds/ñumessenger/apagadoserver.wav &</action>    
+    </button>    
+    </hbox>
+    </frame>
+ 
+  <frame modo netcat>
+  <button can-default="true" has-default="true" use-stock="true">
+   <label>PC server</label>
+     <action>exec  Eterm -T Cryptcat_Servidor_El_Otro --scrollbar-type=xterm --buttonbar=off -g 60x20+0+0 -e /usr/bin/modonc & aplay /usr/share/sounds/ñumessenger/inicioserver.wav &</action>    
+    </button>
+    <button can-default="true" has-default="true" use-stock="true">
+   <label>PC cliente</label>
+     <action>exec  Eterm -T Cryptcat_Cliente_El_Otro --scrollbar-type=xterm --buttonbar=off -g 60x20+0+0 -e /usr/bin/modopc2 & aplay /usr/share/sounds/ñumessenger/iniciocliente.wav &</action>    
+    </button>            
+  <hbox> 
+  <text>     
+   <label>Password Cryptcat</label>
+   </text>   
+    <entry activates-default="true">
+    <variable>ENTRY3</variable>
+   </entry>   
+     <button can-default="true" has-default="true" use-stock="true">
+    <label>Passwd</label>
+     <action>aplay /usr/share/sounds/ñumessenger/clave.wav > /dev/null 2> /dev/null | echo -n "$ENTRY3" &</action>
+     <action>refresh:ENTRY3</action>
+    </button>
+    <button>
+      <input file icon="up"></input>
+        <action type="launch">CHILD5</action>          
+    </button>
+         <button>
+      <input file icon="down"></input>
+        
+        <action type="launch">CHILD6</action> 
+         </button>
+    </hbox>
+  </frame>
+  <frame Ñumessenger sencillamente para el geek>    
+   <text>     
+     <label>Ⓓ!$₣Яµ7@ℒ0</label>     
+   </text>
+		<button>
+			<input file>"/usr/share/ñumessenger/pixmaps/msn.gif"</input>
+			<action>xdg-open http://mamalibre.text0.tk/?q=content/chat-%C3%B1umessenger-alpha &</action>		
+		</button> 
+		</frame>  
+</vbox>
+</window>'
+
+export CHILD4='
+<window title="ideólogos" icon-name="dialog-information" skip_taskbar_hint="true">
+  <vbox>
+   <pixmap>
+      <input file>/usr/share/ñumessenger/pixmaps/netcat.png</input>
+    </pixmap>
+    <text>
+      <label>Netcat + Encriptación = Cryptcat + G.U.I. = Ñumessenger</label>
+    </text>
+    <hbox>     
+    <button>    
+        <label>cryptcat.sourceforge.net</label>
+    
+     <action>xdg-open http://cryptcat.sourceforge.net/ &</action>
+    </button>   
+    </hbox> 
+ <frame Ideas y Agradecimientos >
+    <edit>
+    <input file>/usr/share/doc/numessenger/ideas.txt</input>
+      <variable>EDITOR</variable>
+      <width>350</width><height>235</height>
+    </edit>    
+   <button>
+     <label>Cerrar</label>
+     <action type="closewindow">CHILD4</action>
+   </button>  
+   </frame>    
+  </vbox> 
+</window>' 
+
+export CHILD5='
+<window title="Upload" icon-name="filenew" default_width="450" skip_taskbar_hint="true">
+<vbox>
+  <frame Seleccionar Archivo>
+    <hbox>
+      <entry>
+        <variable>FILE</variable>
+        <width>550</width>
+      </entry>
+      <button>
+        <input file stock="gtk-open"></input>
+        <variable>FILE_BROWSE</variable>
+        <action type="fileselect">FILE</action>
+      </button>
+    </hbox>
+  </frame>
+  
+  
+    <hbox>
+   <button ok>    
+    <action>/usr/bin/enviofile &</action>   
+     </button>
+   <button use-stock="true" label="gtk-quit" has-focus="true">
+      <action type="closewindow">CHILD5</action>
+     </button>   
+  </hbox>
+</vbox>
+</window>'
+
+export CHILD6='
+<window title="Download" window_position="1" icon-name="filenew" default_width="450" skip_taskbar_hint="true" >
+<vbox>
+  <frame Archivo>
+    <text>
+      <label>Recibiendo archivo.</label>
+    </text>
+    <progressbar>
+       <label>Estableciendo conexión</label>
+      <input>for i in $(seq 0 10 100); do echo $i; sleep 0.7; done</input>
+      
+    </progressbar>
+    <text>
+      <label>A la carpeta ~/Descargas</label>
+    </text>    
+  </frame>
+  
+  
+    <hbox>    
+    <entry activates-default="true">
+     <default>EscribaUnoNuevo</default>
+    <variable>ENTRYFILE</variable>
+   </entry>   
+     <button can-default="true" has-default="true" use-stock="true">
+    <label>Download</label>   
+     <action>echo -n "$ENTRYFILE"</action>
+     <action>/usr/bin/recibefile &</action>
+     </button>
+     <button use-stock="true" label="gtk-quit" has-focus="true">
+       <action type="closewindow">CHILD6</action>
+     </button>    
+  </hbox>
+</vbox>
+</window>'
+
+
+gtkdialog -p script
+unset CHILD CHILD2 CHILD3 CHILD4 CHILD5 CHILD6

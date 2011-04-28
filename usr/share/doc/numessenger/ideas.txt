@@ -1,0 +1,29 @@
+
+Fabian Bonetti <mama21mama@mamalibre.com.ar>
+Creador de la G.U.I.
+
+Juan Carlos <juancarlospaco@gmail.com>
+Socket netcat con puertos altos.
+por la simplicidad de usar xdg-open.
+
+Alvaro T Cordova twitter.com/alvarotc2009
+Por la idea de grabar las pruebas y usar
+puertos del msn, y por ser el tester.
+Notificacion de descarga upload de archivos.
+
+Tukeke twitter.com/guerrilleroinfo
+La idea de ponerle seguridad y de ahi 
+vino la encriptacion en modo netcat.
+Tratando de crear un paquete para arch.
+
+D-coy twitter.com/decoy91
+Por las pruebas con cryptcat
+y multiusuario.
+
+yipman identi.ca/arean
+Tester de la version 5.6.5
+Agregado de mas avisos sonoros
+y propuesta de chat miltiusuario.
+
+Ayuda al proyecto, difúndelo. 
+http://mamalibre.text0.tk/?q=node/595

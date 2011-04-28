@@ -1,0 +1,109 @@
+Changelog de la version actual:
+
+
+version 6.6.7
+
+ mas seguridad al terminar de usar la gui:
+ 
+* se creo el script serveroff para apagar el servidor modo normal al terminar la gui.
+* se añadio killall cuando salimos de la gui para matar a todos los procesos que usen cryptcat y ncat
+
+version 6.6.6
+
+* se agrego mas avisos en archivos wav
+
+
+version 6.6.5
+
+* se implemento el proyecto ncat que con el se soporta multiusuarios y poder establecer un servidor de chat con soporte ssl
+
+
+version 5.6.5
+
+* ahora se creo otro socket que usa el puerto 6898 para si no pisar las lineas en el chat
+  quedando mas amigable.
+
+
+version 4.6.5
+
+* enlases a ventanas de la gui, hacia que al abir el browser se bloqueara la gui, solucione agregando un and (&) al final del comando.
+
+
+version 4.5.5
+
+* se grego un parametro ( -v ) mas al cryptcat le permitirá saber la cantidad de datos enviados y recibidos al final de la conexion
+* se creo la ventana de aviso de archivo recibido
+* se creo la ventana de conexion establecida para envio de archivo
+* se crearon archivos de sonido que avisa sobre la conexion establecida y la descarga completa
+ 
+version 4.5.4
+
+* se mejoro las ventanas asi cada vez que se abran algunas ventanas hijas ahora no ocupara el panel
+* se dejo por defecto el dominio del saludo del sistema
+* se puso el date en las terminales
+
+
+version 4.5.3
+
+* se implemento el soporte de archivos, para upload y download
+
+version 3.5.3
+
+* servidor modo normal bloqueba la gui por el parametro de SimpleHTTPServer de python mal puesto
+  corregido
+
+
+version 3.4.3
+
+* mas informacion al faq
+* se mejoro el mensaje de bienvenida que tenia retardo
+
+
+version 3.4.2
+
+* se creo el icono faq con material descriptivo
+* password cryptcat para tener la opcion de usar o no
+* corregido boton ideas no apuntaba bien
+
+version 3.3.2
+
+* se corrigieron los parametros del cryptcat que hacia un fix al conectar
+
+
+version 3.2.2-rc2
+
+* se implemento cryptcat se reemplazo el netcat para tener encriptacion
+* se añadio sonido de bienvenida
+* sa cambio las terminales xterm por eterm 
+* fix no conecta pc a pc
+
+
+version 2.2.2-rc1
+
+* se corrigieron links externos
+
+version 2.2.1:
+
+* se corrigio el empaquetado
+
+
+version 2.1.1:
+
+* boton enviar/recibir ahora solo tiene enviar en modo 
+  normal
+
+version 2.1:
+
+* se cambiaron los puertos del netcat
+
+
+version 2.0:
+
+ dos modos de chat
+
+ * con socket
+ * sin socket
+
+version 1.0:
+
+ * sin socket

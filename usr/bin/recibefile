@@ -1,0 +1,34 @@
+#!/bin/bash
+#modo recive archivo
+cryptcat "$ENTRY2" -vv 6868 -k "$ENTRY3" > ~/Descargas/"$ENTRYFILE" &
+### no logro que avise cuando realmente descargo el archivo
+### si es un archivo pequeño no hay drama
+### pero en un archivo grande te das cuenta.
+### mi idea es hacer que cryptcat no pase de largo a la ventana del aviso sin antes descargar.
+aplay /usr/share/sounds/ñumessenger/descarga.wav &
+export MAIN_DIALOG='
+<window title="Download" window_position="1" icon-name="filenew" default_width="450" skip_taskbar_hint="true" >
+ <vbox>
+  <text>
+    <label>Descarga completa.</label>
+  </text>
+  
+    <pixmap>
+      <input file>/usr/share/ñumessenger/pixmaps/download.gif</input>
+    </pixmap>
+    <text>
+    <label>Puede decirle a su amigo que termino... </label>
+  </text>
+  <text>
+    <label>...la transferencia del archivo.</label>
+  </text>
+ 
+  <hbox>
+     <button use-stock="true" label="gtk-quit" has-focus="true">
+       <action type="closewindow">MAIN_DIALOG</action>
+     </button>    
+  </hbox>
+ </vbox>
+</window>'
+
+gtkdialog --program=MAIN_DIALOG

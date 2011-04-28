@@ -1,0 +1,30 @@
+#!/bin/bash
+#modo envio archivo
+cryptcat -vvlp 6868 -k "$ENTRY3" < "$FILE" & 
+aplay /usr/share/sounds/ñumessenger/upload.wav &
+export MAIN_DIALOG='
+<window title="Upload" window_position="1" icon-name="filenew" default_width="450" skip_taskbar_hint="true" >
+ <vbox>
+  <text>
+    <label>Conexion establecida.</label>
+  </text>
+  
+    <pixmap>
+      <input file>/usr/share/ñumessenger/pixmaps/download.gif</input>
+    </pixmap>
+     <text>
+    <label>Su amigo le avisara cuando termine la transferencia.</label>
+  </text>
+  <text>
+    <label>Puede cerrar esta ventana y la de selección de archivo.</label>
+  </text>
+ 
+  <hbox>
+     <button use-stock="true" label="gtk-quit" has-focus="true">
+       <action type="closewindow">MAIN_DIALOG</action>
+     </button>    
+  </hbox>
+ </vbox>
+</window>'
+
+gtkdialog --program=MAIN_DIALOG

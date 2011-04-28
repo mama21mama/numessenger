@@ -1,0 +1,8 @@
+#!/bin/bash
+#modo netcat pc cliente
+date
+echo Tomese su tiempo en presionar enter y no lo use de puntuacion.
+echo Tips: pegar texto con la ruedita del mouse.
+cryptcat "$ENTRY2" -vv 6896 -k "$ENTRY3" &
+exec  Eterm -T Cryptcat_Cliente_Yo --scrollbar-type=xterm --buttonbar=off -g 60x20+0+300 -e cryptcat "$ENTRY2" -vv 6898 -k "$ENTRY3"
+exit 0

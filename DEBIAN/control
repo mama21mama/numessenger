@@ -1,0 +1,26 @@
+Package: numessenger
+Priority: optional
+Section: internet
+Maintainer: mama21mama <mama21mama@mamalibre.com.ar>
+Architecture: all
+Version: 6.6.7
+Depends: nmap, alsa-utils, cryptcat, eterm, curl, gtkdialog (>=2:0.7.20-4)
+Description: Chat Ñumessenger
+ Sencillamente un mensajero para geek.
+ .
+ Modo netcat usa ahora CryptCat seria netcat con encriptacion
+ o sea que se encriptara todo los paquetes que use ese modo.
+ .
+ Ahora se añadio el soporte multiusuario de la mano de el proyecto Ncat
+ se podra crear un servidor de chat con soporte ssl para 100 clientes.
+ .
+ Modo normal esta en desarrollo y es algo inseguro para 
+ pasar claves y demas que tengan valor.
+ .
+ Bugs, ideas o criticas dejar comentario
+ . 
+ http://mamalibre.text0.tk/?q=node/595#disqus_thread
+ .
+Homepage: http://mamalibre.com.ar/
+Bugs: http://mamalibre.text0.tk/?q=node/595#disqus_thread
+Origin: Lubuntu

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Ñumessenger
+Comment[es]=Chat Ñumessenger
+Exec=ñumessenger
+Terminal=0
+Type=Application
+Icon=/usr/share/ñumessenger/pixmaps/msn.gif
+Categories=Network;Application;
