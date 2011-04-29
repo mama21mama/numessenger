@@ -1,6 +1,11 @@
 Changelog de la version actual:
 
 
+version 6.6.8
+
+* en algunas distro los iconos upload y download no se veian, se puso unos nuevos que ahora se ven
+
+
 version 6.6.7
 
  mas seguridad al terminar de usar la gui:

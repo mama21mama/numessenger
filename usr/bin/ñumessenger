@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#       ñumessenger 6.6.7
+#       ñumessenger 6.6.8
 #       
 #       Copyright 2011 Fabián Bonetti <mama21mama@mamalibre.com.ar>
 #       
@@ -24,7 +24,7 @@ export CHILD3='
 <frame Ayuda>
 <vbox>
 		<text justify="2">     
-			<label>ñumessenger v6.6.7 «tenes dos modos el normal que funciona sin socket y el modo netcat con cryptcat»</label>              
+			<label>ñumessenger v6.6.8 «tenes dos modos el normal que funciona sin socket y el modo netcat con cryptcat»</label>              
 		</text>				
 			<text justify="2">
 			<label> -- </label>		 
@@ -87,7 +87,7 @@ export CHILD='
   <vbox>  
    <text>      
      <variable>CHILD</variable>			
-     <label>Ñumessenger Versión 6.6.7</label>     
+     <label>Ñumessenger Versión 6.6.8</label>     
    </text>
    <text>     
      <label>Copyright ©2011 Fabián Bonetti</label>     
@@ -142,7 +142,7 @@ export script='
     <action>rm ~/.gnumsn/tmp/receive1.txt & aplay /usr/share/sounds/ñumessenger/recibir.wav &</action>
     <action>refresh:ENTRY_DATE</action>    
   </button>
-    <text><label>6.6.7</label></text>
+    <text><label>6.6.8</label></text>
    <entry activates-default="true">
     <variable>ENTRY1</variable>
    </entry>
@@ -225,12 +225,12 @@ export script='
      <action>aplay /usr/share/sounds/ñumessenger/clave.wav > /dev/null 2> /dev/null | echo -n "$ENTRY3" &</action>
      <action>refresh:ENTRY3</action>
     </button>
-    <button>
-      <input file icon="up"></input>
+    <button>    
+      <input file>/usr/share/ñumessenger/pixmaps/up.png</input>
         <action type="launch">CHILD5</action>          
     </button>
-         <button>
-      <input file icon="down"></input>
+         <button>         
+      <input file>/usr/share/ñumessenger/pixmaps/down.png</input>
         
         <action type="launch">CHILD6</action> 
          </button>
