@@ -1,5 +1,9 @@
 Changelog de la version actual:
 
+version 6.6.9
+
+* se añadio icono para resetear socket cryptcat port 6868, ahora el client podra enviar archivos.
+
 
 version 6.6.8
 
