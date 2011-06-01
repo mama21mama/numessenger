@@ -1,0 +1,4 @@
+#!/bin/bash
+#Boton Recibir
+cd ~;mkdir -p .gnumsn/tmp;cd .gnumsn/tmp;wget "$ENTRY2"/receive1.txt;cat ~/.gnumsn/tmp/receive1.txt;
+exit 0

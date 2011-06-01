@@ -2,6 +2,10 @@
 Fabian Bonetti <mama21mama@mamalibre.com.ar>
 Creador de la G.U.I.
 
+Nitsuga <agustin@dallalba.com.ar>
+Variables libpath y soundpatch
+y aporte de /usr/lib/numessenger 
+
 Juan Carlos <juancarlospaco@gmail.com>
 Socket netcat con puertos altos.
 por la simplicidad de usar xdg-open.

@@ -3,7 +3,7 @@ Priority: optional
 Section: internet
 Maintainer: mama21mama <mama21mama@mamalibre.com.ar>
 Architecture: all
-Version: 6.6.9
+Version: 6.7.9
 Depends: nmap, alsa-utils, cryptcat, eterm, curl, gtkdialog (>=2:0.7.20-4)
 Description: Chat Ñumessenger
  Sencillamente un mensajero para geek.

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#       ñumessenger 6.6.9
+#       ñumessenger 6.7.9
 #       
 #       Copyright 2011 Fabián Bonetti <mama21mama@mamalibre.com.ar>
 #       
@@ -18,13 +18,15 @@
 #       along with this program; if not, write to the Free Software
 #       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #       MA 02110-1301, USA.
-aplay /usr/share/sounds/ñumessenger/ñulogin.wav &
+LIBPATH="/usr/lib/numessenger" 
+SOUNDPATH="/usr/share/sounds/ñumessenger"
+aplay "$SOUNDPATH"/ñulogin.wav &
 export CHILD3='
 <window title="Ayuda" icon-name="dialog-question" default_width="650" skip_taskbar_hint="true">
 <frame Ayuda>
 <vbox>
 		<text justify="2">     
-			<label>ñumessenger v6.6.9 «tenes dos modos el normal que funciona sin socket y el modo netcat con cryptcat»</label>              
+			<label>ñumessenger v6.7.9 «tenes dos modos el normal que funciona sin socket y el modo netcat con cryptcat»</label>              
 		</text>				
 			<text justify="2">
 			<label> -- </label>		 
@@ -87,7 +89,7 @@ export CHILD='
   <vbox>  
    <text>      
      <variable>CHILD</variable>			
-     <label>Ñumessenger Versión 6.6.9</label>     
+     <label>Ñumessenger Versión 6.7.9</label>     
    </text>
    <text>     
      <label>Copyright ©2011 Fabián Bonetti</label>     
@@ -135,20 +137,20 @@ export script='
 <vbox>
   <entry>
     <variable>ENTRY_DATE</variable>
-    <input>bucle</input>      
+    <input>'"$LIBPATH"'/bucle</input>      
   </entry>
   <button>
     <label>Recibir</label>
-    <action>rm ~/.gnumsn/tmp/receive1.txt & aplay /usr/share/sounds/ñumessenger/recibir.wav &</action>
+    <action>rm ~/.gnumsn/tmp/receive1.txt & aplay '"$SOUNDPATH"'/recibir.wav &</action>
     <action>refresh:ENTRY_DATE</action>    
   </button>
-    <text><label>6.6.9</label></text>
+    <text><label>6.7.9</label></text>
    <entry activates-default="true">
     <variable>ENTRY1</variable>
    </entry>
    <button can-default="true" has-default="true" use-stock="true">
     <label>Enviar</label>
-    <action>echo -n "$ENTRY1" > ~/.gnumsn/receive1.txt;rm ~/.gnumsn/tmp/receive1.* | aplay /usr/share/sounds/ñumessenger/envio.wav &</action>
+    <action>echo -n "$ENTRY1" > ~/.gnumsn/receive1.txt;rm ~/.gnumsn/tmp/receive1.* | aplay '"$SOUNDPATH"'/envio.wav &</action>
     <action>$TREE</action>
     <action>refresh:ENTRY_DATE</action>
    </button>    
@@ -159,12 +161,12 @@ export script='
    </entry>   
      <button can-default="true" has-default="true" use-stock="true">
     <label>IP</label>
-     <action>aplay /usr/share/sounds/ñumessenger/ipload.wav > /dev/null 2> /dev/null | echo -n "$ENTRY2" &</action>
+     <action>aplay '"$SOUNDPATH"'/ipload.wav > /dev/null 2> /dev/null | echo -n "$ENTRY2" &</action>
      <action>refresh:ENTRY2</action>
     </button>
     <button can-default="true" has-default="true" use-stock="true">
    <label>ON</label>
-     <action>exec server & aplay /usr/share/sounds/ñumessenger/inicioserver.wav &</action>    
+     <action>'"$LIBPATH"'/server & aplay '"$SOUNDPATH"'/inicioserver.wav &</action>    
     </button>      
      <button help>
     <action type="launch">CHILD3</action> 
@@ -175,7 +177,7 @@ export script='
     <action type="launch">CHILD</action> 
     </button>     
      <button use-stock="true" label="gtk-quit" has-focus="true">
-     <action>aplay /usr/share/sounds/ñumessenger/ñufin.wav & killall -w cryptcat & killall -w ncat & exec serveroff</action>    
+     <action>aplay '"$SOUNDPATH"'/ñufin.wav & killall -w cryptcat & killall -w ncat & '"$LIBPATH"'/serveroff</action>    
       <action>EXIT:Exit</action>       
      </button>               
   </hbox>
@@ -190,16 +192,16 @@ export script='
      <button can-default="true" has-default="true" use-stock="true">
     <label>Iniciar</label>
      <action>echo -n "$ENTRY4"</action>
-     <action>Eterm -T Modo_Ncat_Multiusuario --scrollbar-type=xterm --buttonbar=off -g 60x20+382+0 -e ncat -v --ssl "$ENTRY4" 6699 & aplay /usr/share/sounds/ñumessenger/iniciocliente.wav &</action>
+     <action>Eterm -T Modo_Ncat_Multiusuario --scrollbar-type=xterm --buttonbar=off -g 60x20+382+0 -e ncat -v --ssl "$ENTRY4" 6699 & aplay '"$SOUNDPATH"'/iniciocliente.wav &</action>
     </button>
   
   <button can-default="true" has-default="true" use-stock="true">
    <label>ON</label>
-     <action>exec ncat -vk --chat --ssl -l "$ENTRY2" -p 6699 & aplay /usr/share/sounds/ñumessenger/inicioserver.wav &</action>         
+     <action>exec ncat -vk --chat --ssl -l "$ENTRY2" -p 6699 & aplay '"$SOUNDPATH"'/inicioserver.wav &</action>         
     </button>
     <button can-default="true" has-default="true" use-stock="true">
    <label>OFF</label>
-     <action>killall ncat & aplay /usr/share/sounds/ñumessenger/apagadoserver.wav &</action>    
+     <action>killall ncat & aplay '"$SOUNDPATH"'/apagadoserver.wav &</action>    
     </button>    
     </hbox>
     </frame>
@@ -207,11 +209,11 @@ export script='
   <frame modo netcat>
   <button can-default="true" has-default="true" use-stock="true">
    <label>PC server</label>
-     <action>exec  Eterm -T Cryptcat_Servidor_El_Otro --scrollbar-type=xterm --buttonbar=off -g 60x20+0+0 -e /usr/bin/modonc & aplay /usr/share/sounds/ñumessenger/inicioserver.wav &</action>    
+     <action>exec  Eterm -T Cryptcat_Servidor_El_Otro --scrollbar-type=xterm --buttonbar=off -g 60x20+0+0 -e '"$LIBPATH"'/modonc & aplay '"$SOUNDPATH"'/inicioserver.wav &</action>    
     </button>
     <button can-default="true" has-default="true" use-stock="true">
    <label>PC cliente</label>
-     <action>exec  Eterm -T Cryptcat_Cliente_El_Otro --scrollbar-type=xterm --buttonbar=off -g 60x20+0+0 -e /usr/bin/modopc2 & aplay /usr/share/sounds/ñumessenger/iniciocliente.wav &</action>    
+     <action>exec  Eterm -T Cryptcat_Cliente_El_Otro --scrollbar-type=xterm --buttonbar=off -g 60x20+0+0 -e '"$LIBPATH"'/modopc2 & aplay '"$SOUNDPATH"'/iniciocliente.wav &</action>    
     </button>            
   <hbox> 
   <text>     
@@ -222,7 +224,7 @@ export script='
    </entry>   
      <button can-default="true" has-default="true" use-stock="true">
     <label>Passwd</label>
-     <action>aplay /usr/share/sounds/ñumessenger/clave.wav > /dev/null 2> /dev/null | echo -n "$ENTRY3" &</action>
+     <action>aplay '"$SOUNDPATH"'/clave.wav > /dev/null 2> /dev/null | echo -n "$ENTRY3" &</action>
      <action>refresh:ENTRY3</action>
     </button>
     <button>    
@@ -237,7 +239,7 @@ export script='
          <button>         
       <input file>/usr/share/ñumessenger/pixmaps/reset_download.gif</input>
         
-        <action>/usr/bin/reset_socket & aplay /usr/share/sounds/ñumessenger/socket_reset.wav &</action> 
+        <action>'"$LIBPATH"'/reset_socket & aplay '"$SOUNDPATH"'/socket_reset.wav &</action> 
          </button>
     </hbox>
   </frame>
@@ -303,7 +305,7 @@ export CHILD5='
   
     <hbox>
    <button ok>    
-    <action>/usr/bin/enviofile &</action>   
+    <action>'"$LIBDPATH"'/enviofile &</action>   
      </button>
    <button use-stock="true" label="gtk-quit" has-focus="true">
       <action type="closewindow">CHILD5</action>
@@ -338,7 +340,7 @@ export CHILD6='
      <button can-default="true" has-default="true" use-stock="true">
     <label>Download</label>   
      <action>echo -n "$ENTRYFILE"</action>
-     <action>/usr/bin/recibefile &</action>
+     <action>'"$LIBPATH"'/recibefile &</action>
      </button>
      <button use-stock="true" label="gtk-quit" has-focus="true">
        <action type="closewindow">CHILD6</action>
