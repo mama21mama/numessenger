@@ -1,4 +1,0 @@
-#!/bin/bash
-#boton ON
-cd ~/.gnumsn;python -m SimpleHTTPServer 6899 &
-exit 0

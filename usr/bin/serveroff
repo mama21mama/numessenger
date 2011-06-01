@@ -1,5 +1,0 @@
-#!/bin/bash
-# apagado el servidor modo normal
-PID=`netstat -antuwp|grep -o 6899.*python|awk '{print $4}'|cut -d'/' -f1`
-TEXT="$PID"
-kill -9 "$PID"

@@ -1,7 +1,0 @@
-#!/bin/bash
-# reset socket en port 6868
-PID2=`netstat -antuwp|grep -o 6868.*cryptcat|awk '{print $4}'|cut -d'/' -f1`
-TEXT="$PID2"
-kill -9 "$PID2"
-echo reset socket en port 6868 completado
-
