@@ -67,7 +67,7 @@ export CHILD3='
      </button>
 		<button>			
     <label>Reportar Problema</label>
-     <action>xdg-open http://mamalibre.text0.tk/?q=node/595#disqus_thread &</action>    
+     <action>xdg-open http://mamalibre.xclan.ru/?q=node/595#disqus_thread &</action>    
     </button>		 	
    <button>
    <input file icon="gtk-quit"></input>
@@ -249,7 +249,7 @@ export script='
    </text>
 		<button>
 			<input file>"/usr/share/ñumessenger/pixmaps/msn.gif"</input>
-			<action>xdg-open http://mamalibre.text0.tk/?q=content/chat-%C3%B1umessenger-alpha &</action>		
+			<action>xdg-open http://mamalibre.xclan.ru/?q=content/chat-%C3%B1umessenger-alpha &</action>		
 		</button> 
 		</frame>  
 </vbox>
