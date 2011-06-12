@@ -1,4 +1,3 @@
-
 Fabian Bonetti <mama21mama@mamalibre.com.ar>
 Creador de la G.U.I.
 
@@ -30,4 +29,4 @@ Agregado de mas avisos sonoros
 y propuesta de chat miltiusuario.
 
 Ayuda al proyecto, difúndelo. 
-http://mamalibre.text0.tk/?q=node/595
+http://mamalibre.xclan.ru/?q=node/595
