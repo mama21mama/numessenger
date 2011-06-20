@@ -3,7 +3,7 @@ Priority: optional
 Section: internet
 Maintainer: mama21mama <mama21mama@mamalibre.com.ar>
 Architecture: all
-Version: 6.7.9
+Version: 6.7.10
 Depends: nmap, alsa-utils, cryptcat, eterm, curl, gtkdialog (>=2:0.7.20-4)
 Description: Chat Ñumessenger
  Sencillamente un mensajero para geek.
@@ -22,5 +22,5 @@ Description: Chat Ñumessenger
  http://mamalibre.text0.tk/?q=node/595#disqus_thread
  .
 Homepage: http://mamalibre.com.ar/
-Bugs: http://mamalibre.text0.tk/?q=node/595#disqus_thread
+Bugs: http://mamalibre.xclan.ru/?q=node/595#disqus_thread
 Origin: Lubuntu
