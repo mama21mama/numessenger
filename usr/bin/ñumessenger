@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-#       ñumessenger 6.7.11
+#       ñumessenger 6.7.12
 #       
-#       Copyright 2011 Fabián Bonetti <mama21mama@mamalibre.com.ar>
+#       Copyright 2011 Fabián Bonetti <mama21mama2000@yahoo.com.ar>
 #       
 #       This program is free software; you can redistribute it and/or modify
 #       it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ export CHILD3='
 <frame Ayuda>
 <vbox>
 		<text justify="2">     
-			<label>ñumessenger v6.7.11 «tenes dos modos el normal que funciona sin socket y el modo netcat con cryptcat»</label>              
+			<label>ñumessenger v6.7.12 «tenes dos modos el normal que funciona sin socket y el modo netcat con cryptcat»</label>              
 		</text>				
 			<text justify="2">
 			<label> -- </label>		 
@@ -67,7 +67,7 @@ export CHILD3='
      </button>
 		<button>			
     <label>Reportar Problema</label>
-     <action>xdg-open http://mamalibre.xclan.ru/?q=node/595#disqus_thread &</action>    
+     <action>xdg-open http://blog.mamalibre.com.ar/?q=node/595#disqus_thread &</action>    
     </button>		 	
    <button>
    <input file icon="gtk-quit"></input>
@@ -84,12 +84,12 @@ export CHILD='
 <frame Acerca de>
 		<button>
 			<input file>"/usr/share/ñumessenger/pixmaps/mamalibre.png"</input>
-			<action>xdg-open http://mamalibre.com.ar &</action>
+			<action>xdg-open http://blog.mamalibre.com.ar &</action>
 		</button> 			 
   <vbox>  
    <text>      
      <variable>CHILD</variable>			
-     <label>Ñumessenger Versión 6.7.11</label>     
+     <label>Ñumessenger Versión 6.7.12</label>     
    </text>
    <text>     
      <label>Copyright ©2011 Fabián Bonetti</label>     
@@ -144,7 +144,7 @@ export script='
     <action>rm ~/.gnumsn/tmp/receive1.txt & aplay '"$SOUNDPATH"'/recibir.wav &</action>
     <action>refresh:ENTRY_DATE</action>    
   </button>
-    <text><label>6.7.11</label></text>
+    <text><label>6.7.12</label></text>
    <entry activates-default="true">
     <variable>ENTRY1</variable>
    </entry>
@@ -249,7 +249,7 @@ export script='
    </text>
 		<button>
 			<input file>"/usr/share/ñumessenger/pixmaps/msn.gif"</input>
-			<action>xdg-open http://mamalibre.xclan.ru/?q=content/chat-%C3%B1umessenger-alpha &</action>		
+			<action>xdg-open http://blog.mamalibre.com.ar/?q=node/595 &</action>		
 		</button> 
 		</frame>  
 </vbox>

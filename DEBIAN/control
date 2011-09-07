@@ -1,11 +1,18 @@
 Package: numessenger
 Priority: optional
 Section: internet
-Maintainer: mama21mama <mama21mama@mamalibre.com.ar>
+Maintainer: mama21mama <mama21mama2000@yahoo.com.ar>
 Architecture: all
-Version: 6.7.11
+Version: 6.7.12
 Depends: nmap, alsa-utils, cryptcat, eterm, curl, gtkdialog (>=2:0.7.20-4)
 Description: Chat Ñumessenger
+ 
+ # # # # # gtkdialog # # # # # 
+ .
+ https://launchpad.net/ubuntu/karmic/i386/gtkdialog/2:0.7.20-4
+ .
+ # # # # #                                                
+ .
  Sencillamente un mensajero para geek.
  .
  Modo netcat usa ahora CryptCat seria netcat con encriptacion
@@ -19,8 +26,8 @@ Description: Chat Ñumessenger
  .
  Bugs, ideas o criticas dejar comentario
  . 
- http://mamalibre.xclan.ru/?q=node/595#disqus_thread
+ http://blog.mamalibre.com.ar/?q=node/595#disqus_thread
  .
-Homepage: http://mamalibre.com.ar/
-Bugs: http://mamalibre.xclan.ru/?q=node/595#disqus_thread
+Homepage: http://blog.mamalibre.com.ar/
+Bugs: http://blog.mamalibre.com.ar/?q=node/595#disqus_thread
 Origin: Lubuntu

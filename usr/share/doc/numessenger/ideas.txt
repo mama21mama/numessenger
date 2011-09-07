@@ -1,5 +1,5 @@
 
-Fabian Bonetti <mama21mama@mamalibre.com.ar>
+Fabian Bonetti <mama21mama2000@yahoo.com.ar>
 Creador de la G.U.I.
 
 Nitsuga <agustin@dallalba.com.ar>
@@ -29,5 +29,10 @@ Tester de la version 5.6.5
 Agregado de mas avisos sonoros
 y propuesta de chat miltiusuario.
 
-Ayuda al proyecto, difúndelo. 
-http://mamalibre.xclan.ru/?q=node/595
+¿Te gusta esta Aplicación?
+
+El desarrollador de esta Aplicación pide
+que contribuyas a su continuo desarrollo 
+realizando una pequeña aportación. 
+
+http://mamalibre.com.ar/donaciones/
