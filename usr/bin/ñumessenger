@@ -26,7 +26,7 @@ export CHILD3='
 <frame Ayuda>
 <vbox>
 		<text justify="2">     
-			<label>ñumessenger v6.7.12 «tenes dos modos el normal que funciona sin socket y el modo netcat con cryptcat»</label>              
+			<label>ñumessenger v6.8.12 «tenes dos modos el normal que funciona sin socket y el modo netcat con cryptcat»</label>              
 		</text>				
 			<text justify="2">
 			<label> -- </label>		 
@@ -38,7 +38,7 @@ export CHILD3='
 			<label> -- </label>		 
 		</text>
 		<text justify="2">
-			<label>host para recibir saludo del sistema «mamalibre.2.je» tal cual asi anda</label> 
+			<label>host para recibir saludo del sistema «mamalibre.com.ar» tal cual asi anda</label> 
 		</text>
 			<text justify="2">
 			<label> -- </label>		 
@@ -89,7 +89,7 @@ export CHILD='
   <vbox>  
    <text>      
      <variable>CHILD</variable>			
-     <label>Ñumessenger Versión 6.7.12</label>     
+     <label>Ñumessenger Versión 6.8.12</label>     
    </text>
    <text>     
      <label>Copyright ©2011 Fabián Bonetti</label>     
@@ -144,7 +144,7 @@ export script='
     <action>rm ~/.gnumsn/tmp/receive1.txt & aplay '"$SOUNDPATH"'/recibir.wav &</action>
     <action>refresh:ENTRY_DATE</action>    
   </button>
-    <text><label>6.7.12</label></text>
+    <text><label>6.8.12</label></text>
    <entry activates-default="true">
     <variable>ENTRY1</variable>
    </entry>
@@ -156,7 +156,7 @@ export script='
    </button>    
    <hbox>   
     <entry activates-default="true">
-    <default>mamalibre.2.je</default>
+    <default>mamalibre.com.ar</default>
     <variable>ENTRY2</variable>
    </entry>   
      <button can-default="true" has-default="true" use-stock="true">
@@ -197,7 +197,7 @@ export script='
   
   <button can-default="true" has-default="true" use-stock="true">
    <label>ON</label>
-     <action>exec ncat -vk --chat --ssl -l "$ENTRY2" -p 6699 & aplay '"$SOUNDPATH"'/inicioserver.wav &</action>         
+     <action>exec ncat -vk --chat --ssl -l "$ENTRY2" 6699 & aplay '"$SOUNDPATH"'/inicioserver.wav &</action>         
     </button>
     <button can-default="true" has-default="true" use-stock="true">
    <label>OFF</label>
@@ -243,7 +243,7 @@ export script='
          </button>
     </hbox>
   </frame>
-  <frame Ñumessenger sencillamente para el geek>    
+  <frame Ñumessenger Mensajero para Anonymous>    
    <text>     
      <label>Ⓓ!$₣Яµ7@ℒ0</label>     
    </text>

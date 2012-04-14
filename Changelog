@@ -1,5 +1,10 @@
 Changelog de la version actual:
 
+version 6.8.12
+
+* Chat multiusuario no conectaba por un parameto mal puesto en el code, en pruebas con 
+  Debian GNU/Linux 6.0.4 (squeeze) se arreglo eso.
+
 version 6.7.12
 
 * url de la web proyecto cambio
